@@ -66,7 +66,7 @@ public class MyArrayList<T> implements List<T> {
 		// shift the elements
 		System.arraycopy(array, index, array, index+1, size-1-index);
 		/*
-		for (int i=size-1; i>index; i--) { //replace to System.arraycopy
+		for (int i=size-1; i>index; i--) {
 			array[i] = array[i-1];
 		}
 		*/
@@ -93,11 +93,9 @@ public class MyArrayList<T> implements List<T> {
 	public void clear() {
 		// note: this version does not actually null out the references
 		// in the array, so it might delay garbage collection.
-		
-		//Runs the garbage collector.
-		System.gc();
-		
 		size = 0;
+		//Runs the garbage collector.
+		//System.gc();
 	}
 
 	@Override
@@ -226,7 +224,6 @@ public class MyArrayList<T> implements List<T> {
 	@Override
 	public T set(int index, T element) {
 		T oldElement = get(index);
-		// TODO: FILL THIS IN!
 		array[index] = element;
 		return oldElement;
 	}
